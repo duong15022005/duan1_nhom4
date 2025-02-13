@@ -78,7 +78,7 @@
     <section class="slider-area">
         <div class="hero-slider-active slick-arrow-style slick-arrow-style_hero slick-dot-style">
             <?php
-            require_once('views/danhmuc/listDanhMuc.php');
+            require_once('danhmuc/listDanhmuc.php');
             ?>
         </div>
     </section>
