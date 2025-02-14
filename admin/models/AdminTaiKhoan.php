@@ -143,7 +143,12 @@ class AdminTaiKhoan
             $stmt->execute(['email' => $email]);
             $user = $stmt->fetch();
 
+            
+
             if ($user && password_verify($mat_khau, $user['mat_khau'])) {
+            //     var_dump(password_verify('nhom04', $user['mat_khau']));
+
+            // die();
                 if ($user['chuc_vu_id'] == 1) { // Admin role
                     if ($user['trang_thai'] == 1) { // Active
                         return $user['email'];

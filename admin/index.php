@@ -24,12 +24,21 @@ require_once './models/AdminTaiKhoan.php';
 // Route
 $act = $_GET['act'] ?? '/';
 
+// if ($act !== 'login-admin' && $act !== 'check-login-admin' && $act !== 'logout-admin') {
+//     checkLoginAdmin();
+// }
+
+
 // Để bảo bảo tính chất chỉ gọi 1 hàm Controller để xử lý request thì mình sử dụng match
 
 match ($act) {
     // Dashboards
     
-    // '/'                 => (new DashboardController())->index(),
+    '/'                 => (new HomeController())->home(),
+    // Rout auth
+    'login-admin' => (new AdminTaiKhoanController())->formLogin(),
+    'check-login-admin' => (new AdminTaiKhoanController())->Login(),
+    'logout-admin' => (new AdminTaiKhoanController())->Logout(),
     // Rout Danh Mục
     'danh-muc' => (new AdminDanhMucController())->danhSachDanhMuc(),// Hiển Thị 
     'from-them-danh-muc' => (new AdminDanhMucController())->fromAddDanhMuc(),// Thêm 
