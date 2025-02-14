@@ -79,7 +79,7 @@
           </div>
         </div>
       </div>
-      <?php
+      <!-- <?php
       // Lấy ID sản phẩm từ URL
       $id_san_pham = isset($_GET['id_san_pham']) ? (int) $_GET['id_san_pham'] : 0;
 
@@ -88,26 +88,26 @@
       echo "<br>";
 
       // Khởi tạo model để lấy bình luận
-      $adminBinhLuan = new AdminBinhLuan();
-      $binhLuanList = $adminBinhLuan->getBinhLuanBySanPhamId($id_san_pham);
+      // $adminBinhLuan = new AdminBinhLuan();
+      // $binhLuanList = $adminBinhLuan->getBinhLuanBySanPhamId($id_san_pham);
 
 
       // Debug bình luận
-      if ($binhLuanList === false) {
-        echo "Có lỗi khi lấy bình luận.";
-      } else {
-        echo "Số bình luận: " . count($binhLuanList); // Hiển thị số lượng bình luận
-      }
+      // if ($binhLuanList === false) {
+      //   echo "Có lỗi khi lấy bình luận.";
+      // } else {
+      //   echo "Số bình luận: " . count($binhLuanList); // Hiển thị số lượng bình luận
+      // }
 
-      ?>
+      ?> -->
 
       <?php
       // Lấy ID sản phẩm từ URL
       $id_san_pham = isset($_GET['id_san_pham']) ? (int) $_GET['id_san_pham'] : 0;
 
       // Khởi tạo model AdminBinhLuan
-      $adminBinhLuan = new AdminBinhLuan();
-      $binhLuanList = $adminBinhLuan->getBinhLuanBySanPhamId($id_san_pham);
+      // $adminBinhLuan = new AdminBinhLuan();
+      // $binhLuanList = $adminBinhLuan->getBinhLuanBySanPhamId($id_san_pham);
       ?>
 
       <style>
@@ -140,7 +140,7 @@
           line-height: 1.5;
         }
       </style>
-      <div class="comment-section">
+      <!-- <div class="comment-section">
         <h3>Bình luận</h3>
         <?php if ($binhLuanList !== false && !empty($binhLuanList)): ?>
           <?php foreach ($binhLuanList as $binhLuan): ?>
@@ -157,7 +157,7 @@
         <?php else: ?>
           <p>Không có bình luận nào cho sản phẩm này.</p>
         <?php endif; ?>
-      </div>
+      </div> -->
     </div>
   </section>
   <!-- /.content -->

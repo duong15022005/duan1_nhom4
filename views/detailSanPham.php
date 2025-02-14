@@ -1,6 +1,6 @@
 <?php
 // Kết nối cơ sở dữ liệu
-$conn = new mysqli('localhost', 'root', '', 'du_an_1');
+$conn = new mysqli('localhost', 'root', '', 'duan1_nhom4');
 
 // Kiểm tra kết nối
 if ($conn->connect_error) {
