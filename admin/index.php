@@ -11,11 +11,13 @@ require_once '../commons/function.php'; // Hàm hỗ trợ
 require_once './controllers/AdminSanPhamController.php';
 require_once './controllers/AdminDanhMucController.php';
 require_once './controllers/AdminDonHangController.php';
+require_once './controllers/AdminTaiKhoanController.php';
 
 // Require toàn bộ file Models
 require_once './models/AdminSanPham.php';
 require_once './models/AdminDanhMuc.php';
 require_once './models/AdminDonHang.php';
+require_once './models/AdminTaiKhoan.php';
 
 // require_once 'controllers/DashboardController.php';
 
@@ -46,7 +48,21 @@ match ($act) {
     'delete-san-pham' => (new AdminSanPhamController())->deleteSanPham(), //Xóa
     'chi-tiet-san-pham' => (new AdminSanPhamController())->detailSanPham(),// Chi Tiết Sản Phẩm
 
+    // Rout Tài Khoản
+    'list-tai-khoan-quan-tri' => (new AdminTaiKhoanController())->danhSachQuanTri(),// Hiển Thị
+    'from-them-quan-tri' => (new AdminTaiKhoanController())->fromAddQuanTri(),
+    'them-quan-tri' => (new AdminTaiKhoanController())->postAddQuanTri(),
+    'from-edit-quan-tri' => (new AdminTaiKhoanController())->fromEditQuanTri(),
+    'edit-quan-tri' => (new AdminTaiKhoanController())->postEditQuanTri(),
 
+    // Rout Khách Hàng
+    // Rout dùng chung cho các tài khoản
+    'reset-password' => (new AdminTaiKhoanController())->resetPassword(),
+    // Rout Quản Lý Tài Khoản Khách Hàng
+    'list-tai-khoan-khach-hang' => (new AdminTaiKhoanController())->danhSachKhachHang(),
+    'from-edit-khach-hang' => (new AdminTaiKhoanController())->fromEditKhachHang(),
+    'edit-khach-hang' => (new AdminTaiKhoanController())->postEditKhachHang(),
+    'chi-tiet-khach-hang' => (new AdminTaiKhoanController())->deltailKhachHang(),
 
     // Rout Đơn Hàng
     'don-hang' => (new AdminDonHangController())->danhSachDonHang(),// Hiển Thị 
