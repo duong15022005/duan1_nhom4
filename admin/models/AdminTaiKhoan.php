@@ -8,15 +8,15 @@ class AdminTaiKhoan
     }
     public function getAllTaiKhoan($chuc_vu_id)
     {
-        // try {
+        try {
             $sql = 'SELECT * FROM tai_khoans WHERE chuc_vu_id = :chuc_vu_id';
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([':chuc_vu_id' => $chuc_vu_id]);
             return $stmt->fetchAll();
-        // }
-        //  catch (Exception $e) {
-        //     echo "Lỗi Truy Vấn:" . $e->getMessage();
-        // }
+        }
+         catch (Exception $e) {
+            echo "Lỗi Truy Vấn:" . $e->getMessage();
+        }
     }
     public function insertTaiKhoan($ho_ten, $email, $password, $chuc_vu_id)
     {
@@ -54,14 +54,14 @@ class AdminTaiKhoan
     }
     public function getDetailTaiKhoan($id)
     {
-        // try {
+        try {
             $sql = 'SELECT * FROM  tai_khoans WHERE id=:id';
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([':id' => $id]);
             return $stmt->fetch();
-        // } catch (Exception $e) {
-        //     echo "Lỗi Truy Vấn:" . $e->getMessage();
-        // }
+        } catch (Exception $e) {
+            echo "Lỗi Truy Vấn:" . $e->getMessage();
+        }
     }
     public function updateTaiKhoan($id, $ho_ten, $email, $so_dien_thoai, $trang_thai, )
     {
@@ -143,12 +143,8 @@ class AdminTaiKhoan
             $stmt->execute(['email' => $email]);
             $user = $stmt->fetch();
 
-            
-
             if ($user && password_verify($mat_khau, $user['mat_khau'])) {
-            //     var_dump(password_verify('nhom04', $user['mat_khau']));
 
-            // die();
                 if ($user['chuc_vu_id'] == 1) { // Admin role
                     if ($user['trang_thai'] == 1) { // Active
                         return $user['email'];
