@@ -34,7 +34,7 @@
           <a href="<?= BASE_URL_ADMIN . '?act=danh-muc' ?>" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
             <p style="color: white;">
-               Danh Mục
+              Danh Mục
             </p>
           </a>
         </li>
@@ -44,11 +44,35 @@
           <a href="<?= BASE_URL_ADMIN . '?act=san-pham' ?>" class="nav-link">
             <i class="nav-icon fas fa-home"></i>
             <p style="color: white;">
-               Sản Phẩm
+              Sản Phẩm
             </p>
           </a>
         </li>
-        
+
+
+        <li class="nav-item">
+          <a href="<?= BASE_URL_ADMIN . '?act=don-hang' ?>" class="nav-link">
+            <i class="nav-icon fas fa-user"></i>
+            <p style="color: white;">
+              Quản Lý Người Dùng
+            </p>
+            <i class="fas fa-angle-left"></i>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="<?= BASE_URL_ADMIN . '/?act=list-tai-khoan-quan-tri' ?>" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
+                <p style="color: white;"> Tài Khoản Quản Trị Viên</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="<?= BASE_URL_ADMIN . '/?act=list-tai-khoan-khach-hang' ?>" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
+                <p style="color: white;"> Tài Khoản Khách Hàng</p>
+              </a>
+            </li>
+          </ul>
+        </li>
         <li class="nav-item">
           <a href="<?= BASE_URL_ADMIN . '?act=don-hang' ?>" class="nav-link">
             <i class="nav-icon fas fa-file-alt"></i>
@@ -57,7 +81,6 @@
             </p>
           </a>
         </li>
-
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

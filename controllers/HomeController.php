@@ -29,7 +29,7 @@ class HomeController
         $this->modelDonHang = new DonHang();
 
         // Khởi tạo kết nối cơ sở dữ liệu
-        $this->conn = new PDO("mysql:host=localhost;dbname=du_an_1", "root", ""); // Thay đổi thông tin nếu cần
+        $this->conn = new PDO("mysql:host=localhost;dbname=duan1_nhom4", "root", ""); // Thay đổi thông tin nếu cần
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     // Phương thức hiển thị trang chủ
