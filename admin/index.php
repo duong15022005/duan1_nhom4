@@ -12,12 +12,19 @@ require_once './controllers/AdminSanPhamController.php';
 require_once './controllers/AdminDanhMucController.php';
 require_once './controllers/AdminDonHangController.php';
 require_once './controllers/AdminTaiKhoanController.php';
+require_once './controllers/AdminHomeController.php';
+require_once './controllers/AdminBinhLuanController.php';
+require_once './controllers/AdminBannerController.php';
+
 
 // Require toàn bộ file Models
+require_once './models/AdminHome.php';
 require_once './models/AdminSanPham.php';
 require_once './models/AdminDanhMuc.php';
 require_once './models/AdminDonHang.php';
 require_once './models/AdminTaiKhoan.php';
+require_once './models/AdminBinhLuan.php';
+require_once './models/AdminBanner.php';
 
 // require_once 'controllers/DashboardController.php';
 
@@ -72,6 +79,14 @@ match ($act) {
     'from-edit-khach-hang' => (new AdminTaiKhoanController())->fromEditKhachHang(),
     'edit-khach-hang' => (new AdminTaiKhoanController())->postEditKhachHang(),
     'chi-tiet-khach-hang' => (new AdminTaiKhoanController())->deltailKhachHang(),
+    // rout Banner 
+    'banner' => (new AdminBannerController())->danhSachBanner(),
+    'form-them-banner' => (new AdminBannerController())->fromAddBanner(),
+    'them-banner' => (new AdminBannerController())->postAddBanner(),
+    'form-sua-banner' => (new AdminBannerController())->fromEditBanner(),
+    'sua-banner' => (new AdminBannerController())->postEditBanner(),
+    'xoa-banner' => (new AdminBannerController())->deleteBanner(),
+
 
     // Rout Đơn Hàng
     'don-hang' => (new AdminDonHangController())->danhSachDonHang(),// Hiển Thị 
@@ -81,5 +96,8 @@ match ($act) {
     'chi-tiet-don-hang' => (new AdminDonHangController())->showDetail($_GET['id']),
     'xoa-don-hang' => (new AdminDonHangController())->deleteDonHang($_GET['id']), //Xóa
     'cap-nhat-trang-thai-don-hang' => (new AdminDonHangController())->capNhatTrangThaiDonHang(),
-
+    // bình luận
+    'binh-luan' => (new AdminBinhLuanController())->danhSachBinhLuan(),
+    'hide-binh-luan' =>isset($_GET['id']) ? (new AdminBinhLuanController())->hideBinhLuan($_GET['id']) : null,
+    'show-binh-luan' =>isset($_GET['id']) ? (new AdminBinhLuanController())->showBinhLuan($_GET['id']) : null,
 };

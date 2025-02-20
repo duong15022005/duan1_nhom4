@@ -81,6 +81,22 @@
             </p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="<?= BASE_URL_ADMIN . '/?act=banner' ?>" class="nav-link">
+            <i class="nav-icon fas fa-warehouse"></i>
+            <p style="color: white;">
+              Quản Lý Banner
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?= BASE_URL_ADMIN . '/?act=binh-luan' ?>" class="nav-link">
+            <i class="nav-icon fas fa-comment"></i>
+            <p style="color: white;">
+              Quản Lý Bình Luận
+            </p>
+          </a>
+        </li>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
