@@ -93,15 +93,6 @@ match ($act) {
     'sua-banner' => (new AdminBannerController())->postEditBanner(),
     'xoa-banner' => (new AdminBannerController())->deleteBanner(),
 
-    // rout Banner 
-    'banner' => (new AdminBannerController())->danhSachBanner(),
-    'form-them-banner' => (new AdminBannerController())->fromAddBanner(),
-    'them-banner' => (new AdminBannerController())->postAddBanner(),
-    'form-sua-banner' => (new AdminBannerController())->fromEditBanner(),
-    'sua-banner' => (new AdminBannerController())->postEditBanner(),
-    'xoa-banner' => (new AdminBannerController())->deleteBanner(),
-
-
     // Rout Đơn Hàng
     'don-hang' => (new AdminDonHangController())->danhSachDonHang(),// Hiển Thị 
     'from-edit-don-hang' => (new AdminDonHangController())->fromEditDonHang($_GET['id']),// Sửa

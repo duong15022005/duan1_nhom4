@@ -65,7 +65,6 @@ match ($act) {
     'chi-tiet-mua-hang' => (new HomeController())->chiTietMuaHang(),
     'huy-don-hang' => (new HomeController())->huyDonHang(),
     'san-pham-theo-danh-muc' => (new SanPhamController())->sanPhamTheoDanhMuc($_GET['id_danh_muc'] ?? null), // Thêm route cho sản phẩm theo danh mục
-
     'san-pham' => (new SanPhamController())->tatCaSanPham(),
     'xac-nhan-nhan-hang' => (new HomeController())->lichSuMuaHang(),
     // Tìm kiếm 
