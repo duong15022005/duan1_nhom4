@@ -40,12 +40,12 @@
                                                 <?php endforeach; ?>
                                             </ul>
                                         </li>
-                                        <!-- <li><a href="<?= BASE_URL . "/?act=khuyen-mai" ?>">Khuyến Mãi</a> -->
+                                        <li><a href="<?= BASE_URL . "/?act=khuyen-mai" ?>">Khuyến Mãi</a>
                                         <li><a href="<?= BASE_URL . "/?act=tin-tuc" ?>">Tin Tức</a>
-                                        <!-- <li><a href="<?= BASE_URL . "/?act=lien-he" ?>">Liên Hệ</a> -->
+                                        <li><a href="<?= BASE_URL . "/?act=lien-he" ?>">Liên Hệ</a>
                                     </ul>
                                 </nav>
-                                <!-- main menu navbar end -->
+                                
                             </div>
                         </div>
                     </div>

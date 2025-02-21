@@ -15,7 +15,9 @@ require_once './controllers/AdminTaiKhoanController.php';
 require_once './controllers/AdminHomeController.php';
 require_once './controllers/AdminBinhLuanController.php';
 require_once './controllers/AdminBannerController.php';
-
+require_once './controllers/AdminKhuyenMaiController.php';
+require_once './controllers/AdminTinTucController.php';
+require_once './controllers/AdminLienHeController.php';
 
 // Require toàn bộ file Models
 require_once './models/AdminHome.php';
@@ -25,15 +27,18 @@ require_once './models/AdminDonHang.php';
 require_once './models/AdminTaiKhoan.php';
 require_once './models/AdminBinhLuan.php';
 require_once './models/AdminBanner.php';
+require_once './models/AdminKhuyenMai.php';
+require_once './models/AdminTinTuc.php';
+require_once './models/AdminLienHe.php';
 
 // require_once 'controllers/DashboardController.php';
 
 // Route
 $act = $_GET['act'] ?? '/';
 
-// if ($act !== 'login-admin' && $act !== 'check-login-admin' && $act !== 'logout-admin') {
-//     checkLoginAdmin();
-// }
+if ($act !== 'login-admin' && $act !== 'check-login-admin' && $act !== 'logout-admin') {
+    checkLoginAdmin();
+}
 
 
 // Để bảo bảo tính chất chỉ gọi 1 hàm Controller để xử lý request thì mình sử dụng match
@@ -41,7 +46,7 @@ $act = $_GET['act'] ?? '/';
 match ($act) {
     // Dashboards
     
-    '/'                 => (new HomeController())->home(),
+    '/'                 => (new AdminHomeController())->home(),
     // Rout auth
     'login-admin' => (new AdminTaiKhoanController())->formLogin(),
     'check-login-admin' => (new AdminTaiKhoanController())->Login(),
@@ -100,4 +105,29 @@ match ($act) {
     'binh-luan' => (new AdminBinhLuanController())->danhSachBinhLuan(),
     'hide-binh-luan' =>isset($_GET['id']) ? (new AdminBinhLuanController())->hideBinhLuan($_GET['id']) : null,
     'show-binh-luan' =>isset($_GET['id']) ? (new AdminBinhLuanController())->showBinhLuan($_GET['id']) : null,
+
+    // Route cho Quản Lý Khuyến Mãi
+    'khuyen-mai' => (new AdminKhuyenMaiController())->danhSachKhuyenMai(),
+    'from-them-khuyen-mai' => (new AdminKhuyenMaiController())->formAddKhuyenMai(),
+    'them-khuyen-mai' => (new AdminKhuyenMaiController())->postAddKhuyenMai(),
+    'from-edit-khuyen-mai' => (new AdminKhuyenMaiController())->formEditKhuyenMai(),
+    'edit-khuyen-mai' => (new AdminKhuyenMaiController())->postEditKhuyenMai(),
+    'delete-khuyen-mai' => (new AdminKhuyenMaiController())->deleteKhuyenMai(),
+    
+    // Rout Quản Lý Tin Tức
+    'tin-tuc' => (new AdminTinTucController())->danhSachTinTuc(),
+    'from-add-tin-tuc' => (new AdminTinTucController())->fromAddTinTuc(),
+    'add-tin-tuc' => (new AdminTinTucController())->postAddTinTuc(),
+    'from-edit-tin-tuc' => (new AdminTinTucController())->fromEditTinTuc(),
+    'edit-tin-tuc' => (new AdminTinTucController())->postEditTinTuc(),
+    'delete-tin-tuc' => (new AdminTinTucController())->deleteTinTuc(),
+
+    // Rout Quản Lý Liên Hệ
+    'lien-he' => (new AdminLienHeController())->danhSachLienHe(),
+    'form-them-lien-he' => (new AdminLienHeController())->fromAddLienHe(),
+    'them-lien-he' => (new AdminLienHeController())->postAddLienHe(),
+    'form-sua-lien-he' => (new AdminLienHeController())->fromEditLienHe(),
+    'sua-lien-he' => (new AdminLienHeController())->postEditLienHe(),
+    'xoa-lien-he' => (new AdminLienHeController())->destroyLienHe(),
+    'update-trang-thai-lien-he' => (new AdminLienHeController())->changeTrangThaiLienHe(),
 };

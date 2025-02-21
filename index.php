@@ -31,9 +31,27 @@ match ($act) {
     '/' => (new HomeController())->home(),
     // Giới thiệu
     'gioi-thieu' => (new HomeController())->GioiThieu(),
-   
-    
-    
+     // Đăng Nhập, Đăng ký
+     'login' => (new HomeController())->formlogin(),
+     'check-login' => (new HomeController())->postLogin(),
+     'register' => (new HomeController())->formRegister(),
+     'check-register' => (new HomeController())->postRegister(),
+     'logout-clinet' => (new HomeController())->Logout(),
+    // Thay đổi thông tin cá nhân
+    'form-sua-thong-tin' => (new HomeController())->formEditCaNhan(),
+    'sua-thong-tin' => (new HomeController())->postEditCaNhan(),
+    // Đổi mật khẩu
+    'doi-mat-khau' => (new HomeController())->formDoiMatKhau(), 
+    'sua-mat-khau' => (new HomeController())->postDoiMatKhau(),
+    //khuyễn mãi
+    'khuyen-mai' => (new KhuyenMaiController())->danhSachKhuyenMai(),
+    // Trang liên hệ
+    'lien-he' => (new LienHeController())->formLienHe(),
+    'gui-lien-he' => (new LienHeController())->guiLienHe(),
+    //tin tức
+    'tin-tuc' => (new TinTucController())->danhSachTinTuc(),
+    // 'detail-tin-tuc' => (new TinTucController())->danhSachTinTuc(),
+    'chiTietTinTuc' => (new TinTucController())->chiTietTinTuc($_GET['id'] ?? null),
     // Rout Chi tiết sản phẩm
     'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(),
     // Thêm Giỏ Hàng

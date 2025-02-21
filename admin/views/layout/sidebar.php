@@ -97,6 +97,28 @@
             </p>
           </a>
         </li>
+        <li class="nav-item">
+          <a href="<?= BASE_URL_ADMIN . '/?act=khuyen-mai' ?>" class="nav-link">
+            <i class="nav-icon fas fa-percent"></i>
+            <p style="color: white;">
+              Quản Lý Khuyến Mãi
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?= BASE_URL_ADMIN . '/?act=lien-he' ?>" class="nav-link">
+            <i class="nav-icon fas fa-id-badge"></i>
+            <p style="color: white;">Liên Hệ</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="<?= BASE_URL_ADMIN . '/?act=tin-tuc' ?>" class="nav-link">
+            <i class="nav-icon fas fa-newspaper"></i>
+            <p style="color: white;">
+              Tin Tức
+            </p>
+          </a>
+        </li>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->
