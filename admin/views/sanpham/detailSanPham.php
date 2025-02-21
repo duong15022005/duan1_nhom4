@@ -79,36 +79,7 @@
           </div>
         </div>
       </div>
-      <!-- <?php
-      // Lấy ID sản phẩm từ URL
-      $id_san_pham = isset($_GET['id_san_pham']) ? (int) $_GET['id_san_pham'] : 0;
-
-
-      echo "ID sản phẩm: " . $id_san_pham; // Debug ID sản phẩm
-      echo "<br>";
-
-      // Khởi tạo model để lấy bình luận
-      // $adminBinhLuan = new AdminBinhLuan();
-      // $binhLuanList = $adminBinhLuan->getBinhLuanBySanPhamId($id_san_pham);
-
-
-      // Debug bình luận
-      // if ($binhLuanList === false) {
-      //   echo "Có lỗi khi lấy bình luận.";
-      // } else {
-      //   echo "Số bình luận: " . count($binhLuanList); // Hiển thị số lượng bình luận
-      // }
-
-      ?> -->
-
-      <?php
-      // Lấy ID sản phẩm từ URL
-      $id_san_pham = isset($_GET['id_san_pham']) ? (int) $_GET['id_san_pham'] : 0;
-
-      // Khởi tạo model AdminBinhLuan
-      // $adminBinhLuan = new AdminBinhLuan();
-      // $binhLuanList = $adminBinhLuan->getBinhLuanBySanPhamId($id_san_pham);
-      ?>
+     
 
       <style>
         .comment-container {
@@ -140,25 +111,7 @@
           line-height: 1.5;
         }
       </style>
-      <!-- <div class="comment-section">
-        <h3>Bình luận</h3>
-        <?php if ($binhLuanList !== false && !empty($binhLuanList)): ?>
-          <?php foreach ($binhLuanList as $binhLuan): ?>
-            <div class="comment-container">
-              <div class="comment-header">
-                <strong><?= isset($binhLuan['nguoi_dung_id']) ? htmlspecialchars($binhLuan['nguoi_dung_id']) : 'Ẩn danh' ?></strong>
-                <span>Ngày: <?= htmlspecialchars($binhLuan['created_at']) ?></span>
-              </div>
-              <div class="comment-content">
-                <?= htmlspecialchars($binhLuan['noi_dung']) ?>
-              </div>
-            </div>
-          <?php endforeach; ?>
-        <?php else: ?>
-          <p>Không có bình luận nào cho sản phẩm này.</p>
-        <?php endif; ?>
-      </div> -->
-    </div>
+     
   </section>
   <!-- /.content -->
   <!-- /.content-wrapper -->

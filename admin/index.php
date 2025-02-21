@@ -21,6 +21,7 @@ require_once './controllers/AdminLienHeController.php';
 
 // Require toàn bộ file Models
 require_once './models/AdminHome.php';
+require_once './models/AdminHome.php';
 require_once './models/AdminSanPham.php';
 require_once './models/AdminDanhMuc.php';
 require_once './models/AdminDonHang.php';
@@ -84,6 +85,14 @@ match ($act) {
     'from-edit-khach-hang' => (new AdminTaiKhoanController())->fromEditKhachHang(),
     'edit-khach-hang' => (new AdminTaiKhoanController())->postEditKhachHang(),
     'chi-tiet-khach-hang' => (new AdminTaiKhoanController())->deltailKhachHang(),
+    // rout Banner 
+    'banner' => (new AdminBannerController())->danhSachBanner(),
+    'form-them-banner' => (new AdminBannerController())->fromAddBanner(),
+    'them-banner' => (new AdminBannerController())->postAddBanner(),
+    'form-sua-banner' => (new AdminBannerController())->fromEditBanner(),
+    'sua-banner' => (new AdminBannerController())->postEditBanner(),
+    'xoa-banner' => (new AdminBannerController())->deleteBanner(),
+
     // rout Banner 
     'banner' => (new AdminBannerController())->danhSachBanner(),
     'form-them-banner' => (new AdminBannerController())->fromAddBanner(),

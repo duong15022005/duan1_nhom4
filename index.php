@@ -27,6 +27,7 @@ $act = $_GET['act'] ?? '/';
 // Để bảo bảo tính chất chỉ gọi 1 hàm Controller để xử lý request thì mình sử dụng match
 
 match ($act) {
+
     // Trang chủ
     '/' => (new HomeController())->home(),
     // Giới thiệu
@@ -64,6 +65,7 @@ match ($act) {
     'chi-tiet-mua-hang' => (new HomeController())->chiTietMuaHang(),
     'huy-don-hang' => (new HomeController())->huyDonHang(),
     'san-pham-theo-danh-muc' => (new SanPhamController())->sanPhamTheoDanhMuc($_GET['id_danh_muc'] ?? null), // Thêm route cho sản phẩm theo danh mục
+
     'san-pham' => (new SanPhamController())->tatCaSanPham(),
     'xac-nhan-nhan-hang' => (new HomeController())->lichSuMuaHang(),
     // Tìm kiếm 
