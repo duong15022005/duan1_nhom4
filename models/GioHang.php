@@ -2,6 +2,7 @@
 class GioHang
 {
     public $conn;
+    public $modelDonHang;
 
     public function __construct()
     {

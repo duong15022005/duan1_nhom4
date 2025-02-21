@@ -27,25 +27,43 @@ $act = $_GET['act'] ?? '/';
 // Để bảo bảo tính chất chỉ gọi 1 hàm Controller để xử lý request thì mình sử dụng match
 
 match ($act) {
-    // Trang chủ
-    '/' => (new HomeController())->home(),
-    // Giới thiệu
-    'gioi-thieu' => (new HomeController())->GioiThieu(),
-   
-    
-    
-    // Rout Chi tiết sản phẩm
-    'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(),
-    // Thêm Giỏ Hàng
-    'them-gio-hang' => (new HomeController())->themGioHang(),
-    'gio-hang' => (new HomeController())->gioHang(),
-    // Thanh Toán
-    'thanh-toan' => (new HomeController())->thanhToan(),
-    'xu-ly-thanh-toan' => (new HomeController())->postThanhToan(),
-    'lich-su-mua-hang' => (new HomeController())->lichSuMuaHang(),
-    'chi-tiet-mua-hang' => (new HomeController())->chiTietMuaHang(),
-    'huy-don-hang' => (new HomeController())->huyDonHang(),
-    'san-pham-theo-danh-muc' => (new SanPhamController())->sanPhamTheoDanhMuc($_GET['id_danh_muc'] ?? null), // Thêm route cho sản phẩm theo danh mục
+      // Trang chủ
+      '/' => (new HomeController())->home(),
+      // Giới thiệu
+      'gioi-thieu' => (new HomeController())->GioiThieu(),
+      // Đăng Nhập, Đăng ký
+      'login' => (new HomeController())->formlogin(),
+      'check-login' => (new HomeController())->postLogin(),
+      'register' => (new HomeController())->formRegister(),
+      'check-register' => (new HomeController())->postRegister(),
+      'logout-clinet' => (new HomeController())->Logout(),
+      // Thay đổi thông tin cá nhân
+      'form-sua-thong-tin' => (new HomeController())->formEditCaNhan(),
+      'sua-thong-tin' => (new HomeController())->postEditCaNhan(),
+      // Đổi mật khẩu
+      'doi-mat-khau' => (new HomeController())->formDoiMatKhau(), 
+      'sua-mat-khau' => (new HomeController())->postDoiMatKhau(),
+      //khuyễn mãi
+      'khuyen-mai' => (new KhuyenMaiController())->danhSachKhuyenMai(),
+      // Trang liên hệ
+      'lien-he' => (new LienHeController())->formLienHe(),
+      'gui-lien-he' => (new LienHeController())->guiLienHe(),
+      //tin tức
+      'tin-tuc' => (new TinTucController())->danhSachTinTuc(),
+      // 'detail-tin-tuc' => (new TinTucController())->danhSachTinTuc(),
+      'chiTietTinTuc' => (new TinTucController())->chiTietTinTuc($_GET['id'] ?? null),
+      // Rout Chi tiết sản phẩm
+      'chi-tiet-san-pham' => (new HomeController())->chiTietSanPham(),
+      // Thêm Giỏ Hàng
+      'them-gio-hang' => (new HomeController())->themGioHang(),
+      'gio-hang' => (new HomeController())->gioHang(),
+      // Thanh Toán
+      'thanh-toan' => (new HomeController())->thanhToan(),
+      'xu-ly-thanh-toan' => (new HomeController())->postThanhToan(),
+      'lich-su-mua-hang' => (new HomeController())->lichSuMuaHang(),
+      'chi-tiet-mua-hang' => (new HomeController())->chiTietMuaHang(),
+      'huy-don-hang' => (new HomeController())->huyDonHang(),
+      'san-pham-theo-danh-muc' => (new SanPhamController())->sanPhamTheoDanhMuc($_GET['id_danh_muc'] ?? null), // Thêm route cho sản phẩm theo danh mục
     'san-pham' => (new SanPhamController())->tatCaSanPham(),
     'xac-nhan-nhan-hang' => (new HomeController())->lichSuMuaHang(),
     // Tìm kiếm 
